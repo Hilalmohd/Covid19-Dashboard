@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://github.com/torfsen/leaflet.zoomhome/blob/master/dist/leaflet.zoomhome.css">
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="india_state.geojson"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/v4-shims.css">
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"-->
+    <!--script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+    <!--Zoom Control-->
+    
+    
+    
+    <link rel="stylesheet" href="https://github.com/Leaflet/Leaflet.label/blob/master/dist/leaflet.label.css">
+    <script src="https://github.com/Leaflet/Leaflet.label/blob/master/dist/leaflet.label.js"></script>
+
+    
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js"
+    integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <link rel="stylesheet" href="leaflet.zoomhome.css">
+    <script src="leaflet.zoomhome.min.js"></script>
+    <script src="script.js"></script>
+    
+    <style>
+        body { margin:0; padding:0; }
+        #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+    </style>
+    
+</head>
+<body> <!--onload="start()"-->
+    <div class="container-fluid  p-0">
+        <div class="row m-0">
+            <div class=" col-12 headDiv text-center">
+                <div >
+                    <h1>Covid-19 Tracker India</h1>
+                </div>
+            </div>
+                <div class="leftDiv col-2 col-lg-6 text-center ">
+                    <div class="buttonDiv">
+                        <!--button id="Imagery" class="btn1" onclick="sat(id)">Satellite</button><br>
+                        <button id="Terrain" class="btn1" onclick="sat(id)">Terrain</button><br>
+                        <button id="Streets" class="btn1" onclick="sat(id)">Streets</button><br>
+                        <button id="Topographic" class="btn1" onclick="sat(id)">Topographic</button-->
+                        <button id="confirmed" type="button" class="btn1" onclick='tst1(id)'><h3>Confirmed</h3><p id="pconfirmed"></p></button>
+                        <button id="active" type="button" class="btn1" onclick='tst1(id)'><h3>Active</h3><p id="pactive"></p></button>
+                        <button id="recovered" type="button" class="btn1" onclick='tst1(id)'><h3>Recovered</h3><p id="precovered"></p></button>
+                        <button id="deaths" type="button" class="btn1" onclick='tst1(id)'><h3>Deceased</h3><p id="pdeaths"></p></button>
+                    </div>
+                    
+                    <p id="stateName">India</p>
+                    <div class="caseChart">
+                        <div id="timeSeriesActive" class="caseChartStatus">
+                            <canvas id="myChartActive" width="800" height="400"></canvas>
+                        </div>
+                        <div id="timeSeriesConfirmed" class="caseChartStatus">
+                            <canvas id="myChartConf" width="800" height="400"></canvas>
+                        </div>
+                        <div id="timeSeriesRecovered" class="caseChartStatus">
+                            <canvas id="myChartReco" width="800" height="400"></canvas>
+                        </div>
+                        <div id="timeSeriesDeaths" class="caseChartStatus">
+                            <canvas id="myChartDeath" width="800" height="400"></canvas>
+                        </div>
+                    </div>
+                    <div class="pill">
+                        <button type="button" id='mnn1' class='timeButton'onclick="caseDuration(objKey.length)">Beginning</button>
+                        <button type="button" id='mnn2'class='timeButton'onclick="caseDuration(90)">3 Months</button>
+                        <button type="button" id='mnn3' class='timeButton' onclick="caseDuration(30)">1 month</button>
+
+                    </div>
+                </div>
+                <div class="row col">
+                    <div id="rightDiv1" class="rightDiv col-6 col-lg-12">
+                           
+                    </div>
+                    <div  class=" col-12 col-lg-12 chartDiv">
+                        <canvas id="distChart" width="800" height="360">
+
+                        </canvas>
+                    </div>
+                </div>    
+
+                
+
+        </div>
+        <!-- Footer -->
+
+
+    <!-- Footer Elements -->
+    <div class="footer">
+  
+      <!-- Social buttons -->
+      <ul class="socialIcons">
+        <li class="facebook"><a href="https://www.facebook.com/hilal.mohammed.33"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com/in/hilal-mohammed-9a478b114"><i class="fa fa-fw fa-linkedin "></i>Linkedin</a></li>
+        <li class="telegram1"><a href=""><i class="fab fa-telegram-plane fa-lg"></i>@mohammed_hilal</a></li>
+        <li class="gmail"><a href="mailto:hilalmohd180@gmail.com" class="mail" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-google"></i>Gmail</a></li>
+        <li class="whatsapp"><a href=""><i class="fa fa-fw fa-whatsapp fa-lg " style="width: auto;"></i>+918089811180</a></li>
+      </ul>
+      <!-- Social buttons -->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color: aliceblue;">© 2020 Copyright:
+      <a href=""> Mohammed Hilal K</a>
+    </div>
+    <!-- Copyright -->
+  
+
+  <!-- Footer -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

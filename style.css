@@ -1,0 +1,282 @@
+
+.leftDiv{
+    margin: 0;
+    width: auto;
+    height:auto;
+    
+    background: rgb(53, 50, 50);
+    float: left;
+   
+}
+.rightDiv{
+    width: 100%;
+    
+    height: 400px;
+    border: solid 1px white;
+    
+}
+
+
+
+.btn1{
+    margin: 10px 6px 10px 6px ;
+    width: 10rem;
+    height: 208px;
+    padding: 5px;
+    font-size: 20px;
+    background: rgb(53, 50, 50);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: whitesmoke;
+    border-radius: 5px;
+    display: inline-block;
+    
+    
+}
+/*.btn1:hover{
+    background: rgb(52, 52, 129);
+}*/
+#active:hover{
+    background-color:rgb(138,43,226,.3);
+    border: 0;
+}
+#recovered:hover{
+    background-color:  rgba(252, 214, 112, .2);
+    border: 0;
+}
+#confirmed:hover{
+    background-color: rgba(255, 0, 0, 0.4);
+    border: 0;
+}
+#deaths:hover{
+    background-color:rgba(231, 219, 224, 0.3);
+    border: 0;
+}
+
+
+#active:focus{
+    background-color:rgb(138,43,226,.3);
+    outline: none;
+}
+#recovered:focus{
+    background-color:  rgba(252, 214, 112, .2);
+    outline: none;
+}
+#confirmed:focus{
+    background-color: rgba(255, 0, 0, 0.4);
+    outline: none;
+}
+#deaths:focus{
+    background-color:rgba(231, 219, 224, 0.3);
+    outline: none;
+}
+
+.buttonDiv{
+    margin: auto;
+ 
+}
+div p {
+    font-weight: bold;
+}
+/*.btn1:focus{
+    background-color: rgb(52, 52, 129);
+}*/
+.chartDiv{
+    float: left;
+    width: auto;
+    height: 400px;
+    background: rgb(80, 66, 66);
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.headDiv{
+    color: white;
+    background: rgb(87, 84, 84);
+}
+#myChart{
+    color:whitesmoke
+}
+.caseChartStatus{
+    margin: 5px;
+    height: auto;
+
+    width: 420px;
+    /*border: 1px solid rgb(0,0,225);*/
+    border-radius: 20px;
+    display: inline-block;
+}
+.caseChart{
+    margin-top: 10px;
+}
+#distChart{
+    width: 800px;
+    height: 350px;
+}
+.timeButton{
+    width: 91px;
+    height: 43px;
+    
+    font-size: 16px;
+    text-align: center;
+    color: white;/*#fd7e14;*/
+    cursor: pointer;
+    background-color: rgba(255,193,7,.12549);
+    font-weight: 700;
+    border-bottom: 0;
+    border-top: 0;
+    appearance: button;
+    border: 2px solid rgba(255,193,7,.12549);
+    margin:0;
+    padding: 0px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.pill{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    
+}
+.timeButton:focus{
+    background: rgba(255,193,7,.31);
+    
+    outline: none;
+}
+.timeButton:hover{
+    background: rgba(255,193,7,.188235);
+}
+.timeButton:active { 
+    transform: scale(0.98); 
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+}
+#myChartConf{
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius:3px;
+    
+}
+#myChartActive{
+    background-color:rgb(138,43,226,.11);
+    border-radius:3px;
+}
+#myChartReco{
+   background-color:  rgba(252, 214, 112, .08);
+   border-radius:3px;
+} 
+#myChartDeath{
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius:3px;
+}
+#stateName{
+    background-color: rgba(144, 52, 230, 0.21);
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    color: white;
+    font-size: 26px;
+    font-weight: 620;
+    text-align: right;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+}
+
+/*social media footer*/
+ul.socialIcons {
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .socialIcons li {
+    background-color: yellow;
+    list-style: none;
+    display: inline-block;
+    margin: 4px;
+    border-radius: 2em;
+    overflow: hidden;
+    margin-top: 35px;
+  }
+  
+  .socialIcons li a {
+    display: block;
+    padding: 0.5em;
+    min-width: 2.28571429em;
+    max-width: 2.28571429em;
+    height: 2.28571429em;
+    white-space: nowrap;
+    line-height: 1.5em; /*it's working only when you write text with icon*/
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: arial;
+    color: rgb(250, 250, 250);
+    
+    font-size: 18px;
+   
+  }
+  
+  .socialIcons li i {
+    margin-right: 0.5em;
+  }
+  
+  .socialIcons li:hover a {
+    max-width: 200px;
+    padding-right: 1em;
+  }
+  
+  .socialIcons .facebook {
+    background-color: #3b5998;
+    box-shadow: 0 0 16px #3b5998;
+  }
+  
+  .socialIcons .linkedin {
+    background-color: #00aced;
+    box-shadow: 0 0 16px #00aced;
+  }
+  
+  .socialIcons .telegram1 {
+    background-color: #a0566a;
+    box-shadow: 0 0 16px #cd486b;
+    
+  }
+  
+  .socialIcons .gmail {
+    background-color: #c92228;
+    box-shadow: 0 0 16px #c92228;
+  }
+  
+  .socialIcons .whatsapp {
+    background-color:  #25D366;
+    box-shadow: 0 0 16px #25D366;
+    
+  }
+  .footer{
+      background-color: rgb(46, 32, 32);
+      
+  }
+  .footer-copyright{
+    margin: 0;
+    background-color: rgb(46, 32, 32);
+  }
+
+  /*Legend*/
+  .legend {
+    padding: 4px 4px;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1px;
+    line-height: 1px;
+  }
+
+  
+  .legend span {
+    bottom: 3px;
+    padding-right: 10px;
+  }
+  
+  .legend i {
+      width: 12px;
+      height: 30px;
+      float: left;
+  
+  }
