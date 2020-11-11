@@ -11,7 +11,7 @@
 .rightDiv{
     width: 100%;
     
-    height: 400px;
+    height: 300px;
     border: solid 1px white;
     
 }
@@ -20,8 +20,8 @@
 
 .btn1{
     margin: 10px 6px 10px 6px ;
-    width: 10rem;
-    height: 208px;
+    width: 8rem;
+    height: 160px;
     padding: 5px;
     font-size: 20px;
     background: rgb(53, 50, 50);
@@ -76,14 +76,16 @@
 }
 div p {
     font-weight: bold;
+   
 }
+
 /*.btn1:focus{
     background-color: rgb(52, 52, 129);
 }*/
 .chartDiv{
     float: left;
     width: auto;
-    height: 400px;
+    height: 300px;
     background: rgb(80, 66, 66);
     
 }
@@ -94,40 +96,41 @@ body{
 .headDiv{
     color: white;
     background: rgb(87, 84, 84);
+    height: 40px;
 }
 #myChart{
     color:whitesmoke
 }
 .caseChartStatus{
-    margin: 5px;
+    margin: 2px;
     height: auto;
 
-    width: 420px;
+    width: 316px;
     /*border: 1px solid rgb(0,0,225);*/
     border-radius: 20px;
     display: inline-block;
 }
 .caseChart{
-    margin-top: 10px;
+    margin-top: 6px;
 }
 #distChart{
     width: 800px;
-    height: 350px;
+    height: 680px;
 }
 .timeButton{
-    width: 91px;
-    height: 43px;
+    width: 71px;
+    height: 33px;
     
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     color: white;/*#fd7e14;*/
     cursor: pointer;
     background-color: rgba(255,193,7,.12549);
-    font-weight: 700;
+    font-weight: 550;
     border-bottom: 0;
     border-top: 0;
     appearance: button;
-    border: 2px solid rgba(255,193,7,.12549);
+    border: 1px solid rgba(255,193,7,.12549);
     margin:0;
     padding: 0px;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -169,20 +172,40 @@ body{
     border-radius:3px;
 }
 #stateName{
+    width: 100%;
+    margin: 0;
     background-color: rgba(144, 52, 230, 0.21);
     padding-right: 20px;
-    padding-top: 5px;
+    padding-top: 1px;
     padding-bottom: 0;
     color: white;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 620;
     text-align: right;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 }
-
+#stateName2{
+    width: 100%;
+    margin: 0;
+    background-color: rgba(144, 52, 230, 0.21);
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    color: white;
+    font-size: 10px;
+    font-style: italic;
+    text-align: left;
+    font-family:Arial, Helvetica, sans-serif
+}
+.lastUpdate{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
 /*social media footer*/
 ul.socialIcons {
-    padding: 10px;
+    padding: 0px;
     text-align: center;
     margin: 0;
   }
@@ -194,7 +217,7 @@ ul.socialIcons {
     margin: 4px;
     border-radius: 2em;
     overflow: hidden;
-    margin-top: 35px;
+    margin-top: 15px;
   }
   
   .socialIcons li a {
@@ -210,7 +233,7 @@ ul.socialIcons {
     font-family: arial;
     color: rgb(250, 250, 250);
     
-    font-size: 18px;
+    font-size: 14px;
    
   }
   
@@ -260,7 +283,7 @@ ul.socialIcons {
 
   /*Legend*/
   .legend {
-    padding: 4px 4px;
+    padding: 2px 2px;
     font: 14px Arial, Helvetica, sans-serif;
     background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -275,8 +298,8 @@ ul.socialIcons {
   }
   
   .legend i {
-      width: 12px;
-      height: 30px;
+      width: 10px;
+      height: 15px;
       float: left;
   
   }

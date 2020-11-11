@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Covid19 Dashboard-WebMap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -51,7 +51,7 @@
         <div class="row m-0">
             <div class=" col-12 headDiv text-center">
                 <div >
-                    <h1>Covid-19 Tracker India</h1>
+                    <h3>Covid-19 Tracker India</h3>
                 </div>
             </div>
                 <div class="leftDiv col-2 col-lg-6 text-center ">
@@ -60,25 +60,30 @@
                         <button id="Terrain" class="btn1" onclick="sat(id)">Terrain</button><br>
                         <button id="Streets" class="btn1" onclick="sat(id)">Streets</button><br>
                         <button id="Topographic" class="btn1" onclick="sat(id)">Topographic</button-->
-                        <button id="confirmed" type="button" class="btn1" onclick='tst1(id)'><h3>Confirmed</h3><p id="pconfirmed"></p></button>
-                        <button id="active" type="button" class="btn1" onclick='tst1(id)'><h3>Active</h3><p id="pactive"></p></button>
-                        <button id="recovered" type="button" class="btn1" onclick='tst1(id)'><h3>Recovered</h3><p id="precovered"></p></button>
-                        <button id="deaths" type="button" class="btn1" onclick='tst1(id)'><h3>Deceased</h3><p id="pdeaths"></p></button>
+                        <button id="confirmed" type="button" class="btn1" onclick='tst1(id)'><h4>Confirmed</h4><p id="pconfirmed"></p></button>
+                        <button id="active" type="button" class="btn1" onclick='tst1(id)'><h4>Active</h4><p id="pactive"></p></button>
+                        <button id="recovered" type="button" class="btn1" onclick='tst1(id)'><h4>Recovered</h4><p id="precovered"></p></button>
+                        <button id="deaths" type="button" class="btn1" onclick='tst1(id)'><h4>Deceased</h4><p id="pdeaths"></p></button>
+                    </div>
+                    <!--span id='spanLast'> Last Update</span-->
+                    <div class='lastUpdate'>
+                        <p id="stateName2">Last Updated Time :<span id='lastUp'></span></p>
+                        <p id="stateName">India</p>
+                        
                     </div>
                     
-                    <p id="stateName">India</p>
                     <div class="caseChart">
                         <div id="timeSeriesActive" class="caseChartStatus">
-                            <canvas id="myChartActive" width="800" height="400"></canvas>
+                            <canvas id="myChartActive" width="600" height="100"></canvas>
                         </div>
                         <div id="timeSeriesConfirmed" class="caseChartStatus">
-                            <canvas id="myChartConf" width="800" height="400"></canvas>
+                            <canvas id="myChartConf" width="600" height="100"></canvas>
                         </div>
                         <div id="timeSeriesRecovered" class="caseChartStatus">
-                            <canvas id="myChartReco" width="800" height="400"></canvas>
+                            <canvas id="myChartReco" width="600" height="100"></canvas>
                         </div>
                         <div id="timeSeriesDeaths" class="caseChartStatus">
-                            <canvas id="myChartDeath" width="800" height="400"></canvas>
+                            <canvas id="myChartDeath" width="600" height="100"></canvas>
                         </div>
                     </div>
                     <div class="pill">
@@ -88,12 +93,12 @@
 
                     </div>
                 </div>
-                <div class="row col">
+                <div class="row col m-0 p-0">
                     <div id="rightDiv1" class="rightDiv col-6 col-lg-12">
                            
                     </div>
                     <div  class=" col-12 col-lg-12 chartDiv">
-                        <canvas id="distChart" width="800" height="360">
+                        <canvas id="distChart" width="800" height="378">
 
                         </canvas>
                     </div>
@@ -122,7 +127,7 @@
     <!-- Footer Elements -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="color: aliceblue;">© 2020 Copyright:
+    <div class="footer-copyright text-center py-2" style="color: aliceblue;">© 2020 Copyright:
       <a href=""> Mohammed Hilal K</a>
     </div>
     <!-- Copyright -->

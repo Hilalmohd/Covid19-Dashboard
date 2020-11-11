@@ -15,6 +15,8 @@ $(document).ready(function(){
         total_confirmed=data.statewise[0].confirmed
         total_deaths=data.statewise[0].deaths
         storedata=data
+        lastUpdate=data.statewise[0].lastupdatedtime
+        document.getElementById("lastUp").innerHTML=lastUpdate
         $("#pactive").append(total_active)
         $("#precovered").append(total_recovered)
         $("#pconfirmed").append(total_confirmed)
@@ -71,7 +73,8 @@ $(document).ready(function(){
                     {
                         label:'Recovered' ,
                         backgroundColor: "rgb(127,255,0)",
-                        data:recover
+                        data:recover,
+                        
                     }
                 ]   
             },
@@ -79,7 +82,8 @@ $(document).ready(function(){
                 title: {
                     display: true,
                     fontColor:"white",
-                    fontSize:20,
+                    fontSize:16,
+                    //padding:0,
                     text: 'State wise Current Cases in India'//+ activeSateName,
                 },
                 tooltips: {
@@ -91,13 +95,16 @@ $(document).ready(function(){
                     xAxes: [{
                         stacked: true,
                         ticks:{
-                            fontColor:"white"
+                            fontColor:"white",
+                            fontSize:10,
+                            maxTicksLimit:20,
                         }
                     }],
                     yAxes: [{
                         stacked: true,
                         ticks:{
                             fontColor:"white",
+                            fontSize:10,
                             callback: function(label, index, labels) {
                                 return label/1000+'k';
                             }
@@ -107,7 +114,8 @@ $(document).ready(function(){
                 legend: {
                     display: true,
                     labels: {
-                        fontColor: 'rgb(255,255,255)'
+                        fontColor: 'rgb(255,255,255)',
+                        fontSize:11
                     }
                 }
             },
@@ -131,7 +139,7 @@ $.ajax({
 });
 $(document).ready(function(){
     currentStateArr=['LA']
-    map = L.map('rightDiv1',{zoomControl:false}).setView([22.554443580751062,82.9673465625], 4);
+    map = L.map('rightDiv1',{zoomControl:false,zoomSnap: 0.20}).setView([22.554443580751062,82.9673465625],8);
     layer=L.esri.basemapLayer("Imagery").addTo(map);
     status='confirmed'
      indiaLayer=L.geoJson(indiastates,
@@ -176,7 +184,7 @@ function countriesStyle(indiaLayer){
             weight:1,
             opacity:1,
             color:'black',
-            dashArray:1,
+            dashArray:0.5,
             fillOpacity:1
             }  
 }
@@ -299,7 +307,7 @@ $(document).ready(function(){
                      labels:totalTimeSeries,
                      datasets:[
                          {
-                            pointRadius: 1.5,
+                            pointRadius: 0,
                             label:'Confirmed Cases',
                             data:totalTimeConfirmed,
                             //minBarLength:100,
@@ -329,7 +337,8 @@ $(document).ready(function(){
                                 maxTicksLimit:5,
                                 fontColor: 'rgb(255,255,255)',
                                 minRotation:0,
-                                maxRotation:0
+                                maxRotation:0,
+                                fontSize:10
                                 //display:false
                                 
                             },
@@ -362,7 +371,8 @@ $(document).ready(function(){
                     legend: {
                         display: true,
                         labels: {
-                            fontColor: 'rgb(255,255,255)'
+                            fontColor: 'rgb(255,255,255)',
+                            fontSize:11
                         }
                     }
                       
@@ -379,7 +389,7 @@ $(document).ready(function(){
                       labels:totalTimeSeries,
                       datasets:[
                           {
-                             pointRadius: 1.5,
+                             pointRadius: 0,
                              label:'Recovered Cases',
                              data:totalTimeRecovered,
                              //minBarLength:100,
@@ -409,7 +419,8 @@ $(document).ready(function(){
                                  maxTicksLimit:5,
                                  fontColor: 'rgb(255,255,255)',
                                  minRotation:0,
-                                 maxRotation:0
+                                 maxRotation:0,
+                                 fontSize:10
                                  //display:false
                                  
                              },
@@ -441,7 +452,8 @@ $(document).ready(function(){
                      legend: {
                         display: true,
                         labels: {
-                            fontColor: 'rgb(255,255,255)'
+                            fontColor: 'rgb(255,255,255)',
+                            fontSize:11
                         }
                     }
                        
@@ -458,7 +470,7 @@ $(document).ready(function(){
                        labels:totalTimeSeries,
                        datasets:[
                            {
-                              pointRadius: 1.5,
+                              pointRadius: 0,
                               label:'Deceased Cases',
                               data:totalTimeDeaths,
                               //minBarLength:100,
@@ -488,7 +500,8 @@ $(document).ready(function(){
                                   maxTicksLimit:5,
                                   fontColor: 'rgb(255,255,255)',
                                   minRotation:0,
-                                  maxRotation:0
+                                  maxRotation:0,
+                                  fontSize:10
                                   //display:false
                                   
                               },
@@ -520,7 +533,8 @@ $(document).ready(function(){
                       legend: {
                         display: true,
                         labels: {
-                            fontColor: 'rgb(255,255,255)'
+                            fontColor: 'rgb(255,255,255)',
+                            fontSize:11
                         }
                     }
                         
@@ -538,7 +552,7 @@ $(document).ready(function(){
                      labels:totalTimeSeries,
                      datasets:[
                          {
-                            pointRadius: 1.5,
+                            pointRadius: 0,
                             label:'Active Cases',
                             data:totalTimeActive,
                             //minBarLength:100,
@@ -568,7 +582,8 @@ $(document).ready(function(){
                                 maxTicksLimit:5,
                                 fontColor: 'rgb(255,255,255)',
                                 minRotation:0,
-                                maxRotation:0
+                                maxRotation:0,
+                                fontSize:10
                                 //display:false
                                 
                             },
@@ -600,7 +615,9 @@ $(document).ready(function(){
                     legend: {
                         display: true,
                         labels: {
-                            fontColor: 'rgb(255,255,255)'
+                            fontColor: 'rgb(255,255,255)',
+                            fontSize:11,
+                            
                         }
                     }
                       
